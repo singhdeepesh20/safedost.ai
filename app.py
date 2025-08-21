@@ -104,10 +104,10 @@ st.markdown("""
 
 st.title("🛡️ SafeDost.AI – A Digital Dost for Women’s Safety")
 """
-SafeDost.AI is that invisible companion — a dost that cares, protects, and empowers women every step of the way.
+     SafeDost.AI is that invisible companion — a dost that cares, protects, and empowers women every step of the way.
 
 
-We dream of a future where every woman knows: “Even if I’m walking alone… I’m never truly alone.”
+          We dream of a future where every woman knows: “Even if I’m walking alone… I’m never truly alone.”
 
 """
 
