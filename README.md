@@ -1,4 +1,4 @@
-# safedost.ai
+# safedost.ai - A Digital Dost for Women’s Safety
 
 The Story
 
