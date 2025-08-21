@@ -22,7 +22,7 @@ CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 150
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("safecommunity-chatbot")
+logger = logging.getLogger("safeDost-chatbot")
 
 
 def get_embeddings():
@@ -64,7 +64,7 @@ def load_faiss(embeddings):
     return None
 
 
-st.set_page_config(page_title="SafeCommunity.AI Chatbot", page_icon="🛡️", layout="wide")
+st.set_page_config(page_title="SafeDost.AI Chatbot", page_icon="🛡️", layout="wide")
 
 st.markdown("""
     <style>
@@ -102,9 +102,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.title("🛡️ SafeDost.AI - Dost for Your Safety")
+st.title("🛡️ SafeDost.AI – A Digital Dost for Women’s Safety")
 """
-In a world full of risks, SafeDost.AI stands by your side. Your friendly digital ‘Dost’ delivers training, awareness, and alerts when you need them most. Protection, guidance, and peace of mind—always within reach.
+SafeDost.AI is that invisible companion — a dost that cares, protects, and empowers women every step of the way.
+
+
+We dream of a future where every woman knows: “Even if I’m walking alone… I’m never truly alone.”
 
 """
 
