@@ -1,0 +1,30 @@
+Women & Emergency Helpline Numbers (India)
+
+- 100 : Police Control Room (All emergencies)
+- 1091 : Women Helpline (Immediate assistance to women in distress)
+- 181 : Women Helpline (Domestic Violence, Abuse, Harassment cases)
+- 112 : National Emergency Helpline (Integrated with police, fire, ambulance)
+- 1098 : Childline (Help for children in distress)
+- 1071 : Disaster Management (Natural calamities, rescue operations)
+- 108 : Ambulance & Medical Emergency
+- 102 : Health Helpline (Pregnancy-related emergencies)
+- 1090 : Uttar Pradesh Police Women Power Line (Cyber & phone harassment)
+- 14567 : Senior Citizens Helpline
+- 14416 : Mental Health Helpline (Counseling support)
+
+✔️ Save these numbers in your phone.
+✔️ Share them with family/friends.
+✔️ Available 24x7 in most states.
+👉 You can simply create a new file called helpline_numbers.txt inside your ./data folder and paste this content.
+That way, when the RAG chatbot is asked “Which number should I call if I face harassment?”, it can retrieve from this file.
+
+Do you also want me to generate content for self_defense_tips.pdf and safe_travel_checklist.txt so your RAG has at least 3 strong documents to start with?
+
+
+
+
+
+
+
+
+
