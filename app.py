@@ -1,10 +1,4 @@
-"""
-SafeCommunity.AI - WhatsApp Style Chatbot RAG App (final fixed)
-- Preloaded safety docs (PDF/TXT)
-- Ingest into FAISS
-- Chatbot with memory (WhatsApp-style UI)
-- Fix: use ChatGroq([HumanMessage(...)]) instead of .generate()
-"""
+
 
 import os
 import pathlib
@@ -19,7 +13,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 from langchain.schema import HumanMessage
 
-# ---------------- Config ----------------
+
 load_dotenv()
 DATA_DIR = pathlib.Path("data")
 FAISS_DIR = pathlib.Path("./faiss_index")
@@ -30,7 +24,7 @@ CHUNK_OVERLAP = 150
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("safecommunity-chatbot")
 
-# ---------------- Helpers ----------------
+
 def get_embeddings():
     return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
 
@@ -69,7 +63,7 @@ def load_faiss(embeddings):
         return FAISS.load_local(str(FAISS_DIR), embeddings)
     return None
 
-# ---------------- Streamlit UI ----------------
+
 st.set_page_config(page_title="SafeCommunity.AI Chatbot", page_icon="🛡️", layout="wide")
 
 st.markdown("""
@@ -114,13 +108,13 @@ In a world full of risks, SafeDost.AI stands by your side. Your friendly digital
 
 """
 
-# ---- Session state ----
+
 if "vectorstore" not in st.session_state:
     st.session_state.vectorstore = None
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# ---- Pre-ingest docs ----
+
 if st.session_state.vectorstore is None:
     docs = load_documents()
     if not docs:
@@ -132,7 +126,7 @@ if st.session_state.vectorstore is None:
     save_faiss(st.session_state.vectorstore)
     st.success(f"✅ Preloaded {len(chunks)} knowledge chunks from ./data")
 
-# ---- Chat UI ----
+
 st.subheader("💬 Chat with your Dost")
 
 for msg in st.session_state.messages:
@@ -141,7 +135,7 @@ for msg in st.session_state.messages:
     else:
         st.markdown(f"<div class='chat-bubble-bot'>🤖 {msg['content']}</div>", unsafe_allow_html=True)
 
-# ---- Input ----
+
 query = st.chat_input("Type your safety question here...")
 if query:
     st.session_state.messages.append({"role": "user", "content": query})
