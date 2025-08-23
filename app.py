@@ -11,7 +11,6 @@ from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 from langchain.schema import HumanMessage
 
-
 # ------------------- CONFIG -------------------
 load_dotenv()
 DATA_DIR = pathlib.Path("data")
@@ -32,7 +31,7 @@ def get_embeddings():
 
 # ------------------- LLM -------------------
 def get_llm():
-    groq_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+    groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", None)
     if not groq_key:
         st.error("❌ Please set `GROQ_API_KEY` in Streamlit secrets or .env file")
         st.stop()
@@ -66,7 +65,9 @@ def save_faiss(vs):
 
 def load_faiss(embeddings):
     if FAISS_DIR.exists() and any(FAISS_DIR.iterdir()):
-        return FAISS.load_local(str(FAISS_DIR), embeddings, allow_dangerous_deserialization=True)
+        return FAISS.load_local(
+            str(FAISS_DIR), embeddings, allow_dangerous_deserialization=True
+        )
     return None
 
 # ------------------- STREAMLIT UI -------------------
@@ -182,4 +183,3 @@ if query:
             st.markdown(f"**Source {idx+1}** {md_text}\n\n{d.page_content[:400]}...")
 
     st.rerun()
-
