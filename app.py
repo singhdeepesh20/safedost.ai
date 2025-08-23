@@ -29,9 +29,9 @@ def get_embeddings():
     return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
 
 def get_llm():
-    groq_key = "GROQ_API_KEY"
+    groq_key = st.secrets["GROQ_API_KEY"]  
     if not groq_key:
-        st.error("❌ Please set GROQ_API_KEY in your .env file")
+        st.error("❌ Please set GROQ_API_KEY in Streamlit secrets")
         st.stop()
     return ChatGroq(groq_api_key=groq_key, model_name="llama-3.1-8b-instant")
 
