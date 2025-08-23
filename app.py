@@ -17,7 +17,7 @@ from langchain.schema import HumanMessage
 load_dotenv()
 DATA_DIR = pathlib.Path("data")
 FAISS_DIR = pathlib.Path("./faiss_index")
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-MiniLM-L3-v2"
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 150
 
@@ -27,7 +27,7 @@ logger = logging.getLogger("safeDost-chatbot")
 
 def get_embeddings():
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/paraphrase-MiniLM-L3-v2",  
+        model_name="sentence-transformers/all-MiniLM-L6-v2",  
         model_kwargs={"device": "cpu"}  
     )
 
