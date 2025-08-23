@@ -25,10 +25,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("safeDost-chatbot")
 
 
+@st.cache_resource
 def get_embeddings():
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",  
-        model_kwargs={"device": "cpu"}  
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={"device": "cpu"}
     )
 
 def get_llm():
