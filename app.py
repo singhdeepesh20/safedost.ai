@@ -26,7 +26,10 @@ logger = logging.getLogger("safeDost-chatbot")
 
 
 def get_embeddings():
-    return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+    return HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L3-v2",  
+        model_kwargs={"device": "cpu"}  
+    )
 
 def get_llm():
     groq_key = st.secrets["GROQ_API_KEY"]  
