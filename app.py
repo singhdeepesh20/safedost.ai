@@ -27,7 +27,7 @@ import os
 
 def get_embeddings():
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",  # public model
+        model_name="sentence-transformers/all-MiniLM-L6-v2",  
         model_kwargs={"device": "cpu"}  
     )
 
@@ -111,8 +111,8 @@ st.title("🛡️ SafeDost.AI – A Digital Dost for Women’s Safety")
 st.write("""
 SafeDost.AI is that invisible companion — a dost that cares, protects, and empowers women every step of the way.
 
-We dream of a future where every woman knows:  
-“Even if I’m walking alone… I’m never truly alone."
+We dream of a future where every woman knows: “Even if I’m walking alone… I’m never truly alone."
+
 """)
 
 # ------------------- SESSION STATE -------------------
