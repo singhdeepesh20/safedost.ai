@@ -22,12 +22,19 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("safeDost-chatbot")
 
 # ------------------- EMBEDDINGS -------------------
-@st.cache_resource
+from langchain_community.embeddings import HuggingFaceEmbeddings
+import os
+
 def get_embeddings():
+    hf_token = os.getenv("HF_TOKEN")  # Load from Streamlit secrets
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
-        model_kwargs={"device": "cpu"}
+        model_name="sentence-transformers/all-MiniLM-L6-v2",  # use L6 (smaller + stable)
+        model_kwargs={"device": "cpu"},
+        encode_kwargs={"normalize_embeddings": False},
+        cache_folder=".cache",  # helps with re-use
+        token=hf_token          # pass the token for auth
     )
+
 
 # ------------------- LLM -------------------
 def get_llm():
