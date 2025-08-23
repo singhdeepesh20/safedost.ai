@@ -26,13 +26,9 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 import os
 
 def get_embeddings():
-    hf_token = os.getenv("HF_TOKEN")  # Load from Streamlit secrets
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",  # use L6 (smaller + stable)
-        model_kwargs={"device": "cpu"},
-        encode_kwargs={"normalize_embeddings": False},
-        cache_folder=".cache",  # helps with re-use
-        token=hf_token          # pass the token for auth
+        model_name="sentence-transformers/all-MiniLM-L6-v2",  # public model
+        model_kwargs={"device": "cpu"}  
     )
 
 
