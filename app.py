@@ -11,7 +11,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 from langchain.schema import HumanMessage
 
-# ------------------- CONFIG -------------------
+
 load_dotenv()
 DATA_DIR = pathlib.Path("data")
 FAISS_DIR = pathlib.Path("./faiss_index")
