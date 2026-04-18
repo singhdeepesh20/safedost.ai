@@ -36,7 +36,7 @@ def get_embeddings():
 def get_llm():
     groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", None)
     if not groq_key:
-        st.error("❌ Please set `GROQ_API_KEY` in Streamlit secrets or .env file")
+        st.error(" Please set `GROQ_API_KEY` in Streamlit secrets or .env file")
         st.stop()
     return ChatGroq(groq_api_key=groq_key, model_name="llama-3.1-8b-instant")
 
