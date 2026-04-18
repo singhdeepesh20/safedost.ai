@@ -40,7 +40,7 @@ def get_llm():
         st.stop()
     return ChatGroq(groq_api_key=groq_key, model_name="llama-3.1-8b-instant")
 
-# ------------------- DOCS HANDLING -------------------
+# ------------------- DOCS HANDLIN -------------------
 def load_documents():
     docs = []
     if not DATA_DIR.exists():
