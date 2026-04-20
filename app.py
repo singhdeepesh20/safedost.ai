@@ -32,7 +32,7 @@ def get_embeddings():
     )
 
 
-# ------------------- LLM -------------------
+
 def get_llm():
     groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", None)
     if not groq_key:
@@ -40,7 +40,7 @@ def get_llm():
         st.stop()
     return ChatGroq(groq_api_key=groq_key, model_name="llama-3.1-8b-instant")
 
-# ------------------- DOCS HANDLIN -------------------
+
 def load_documents():
     docs = []
     if not DATA_DIR.exists():
