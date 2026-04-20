@@ -73,62 +73,73 @@
 
 ---
 
-## ⚙️ How It Works  
+## ⚙️ How It Works
 
-<br>
+The system follows a precise pipeline to ensure actionable and grounded safety guidance:
 
-```text
-User Query
-   ↓
-AI Processing (LLM + RAG)
-   ↓
-Context Retrieval (FAISS)
-   ↓
-Actionable Safety Guidance
+1.  **User Query:** Natural language input regarding a safety concern.
+2.  **AI Processing:** Orchestration via **LangChain** using **Llama 3**.
+3.  **Context Retrieval:** Efficient similarity search using **FAISS** vector store.
+4.  **Actionable Output:** Verified safety protocols and helpline access.
 
+---
 
-🛠️ Tech Stack
-Frontend: Streamlit
-Backend: LangChain
-LLM: Groq (LLaMA3)
-Embeddings: HuggingFace
-Vector DB: FAISS
+## 🛠️ Tech Stack
 
-📊 System Capabilities
-🔎 Semantic Search
-🧠 Context-Aware Reasoning
-⚡ Fast Inference (Groq API)
-🔗 Source-Based Responses
-📉 Reduced Hallucination
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | Streamlit |
+| **Orchestration** | LangChain |
+| **Inference Engine** | Groq (LLaMA 3) |
+| **Embeddings** | HuggingFace |
+| **Vector Database** | FAISS |
 
-💡 Use Cases
-👩 For Women
-Emergency guidance
-Awareness & safety tips
-Helpline access
-🏢 For Organizations
-Safety awareness systems
-Training & compliance tools
+---
 
-🌍 Social Impact
-Bridging safety awareness gaps
-Accessible AI support for all
+## 📊 System Capabilities
 
-🚀 Future Enhancements
-Multilingual support
-Real-time alert system
-Mobile app integration
-Location-based safety insights
+* **🔎 Semantic Search:** Understands the intent behind safety queries beyond simple keywords.
+* **🧠 Context-Aware Reasoning:** Provides advice tailored to specific scenarios (e.g., workplace vs. public transit).
+* **⚡ Fast Inference:** Utilizes **Groq LPU™** for near-instant responses during emergencies.
+* **🔗 Source-Based Responses:** Links guidance to verified safety documents to ensure reliability.
+* **📉 Reduced Hallucination:** RAG architecture ensures the AI stays grounded in provided safety data.
 
-👨‍💻 Author
-<p align="center">
+---
 
-Deepesh Singh
-AI Engineer | GenAI | Agentic Systems
+## 💡 Use Cases
 
-<a href="https://www.linkedin.com/in/contactdeepesh"> <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin" /> </a> </p>
-⚡ Vision
-<p align="center">
-“In a world full of risks, every woman deserves a dost.”
+### 👩 For Women
+* **Emergency Guidance:** Real-time steps for immediate threats.
+* **Awareness:** Safety tips and preventive measures for daily life.
+* **Helpline Access:** Quick retrieval of critical contact numbers.
+
+### 🏢 For Organizations
+* **Safety Awareness:** Systems to educate employees on security protocols.
+* **Compliance Tools:** Training modules for workplace safety and legal rights.
+
+---
+
+## 🚀 Future Enhancements
+
+- [ ] **Multilingual Support:** Expanding reach to non-English speakers.
+- [ ] **Real-time Alert System:** Integration with SMS/WhatsApp for SOS triggers.
+- [ ] **Mobile App Integration:** Native experience for on-the-go access.
+- [ ] **Location-based Insights:** Hyper-local safety data and police station mapping.
+
+---
+
+## 👨‍💻 Author
+
+**Deepesh Singh** *AI Engineer | GenAI | Agentic Systems*
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/contactdeepesh">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn" />
+  </a>
 </p>
-<!-- 🔥 FOOTER --> <p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:14b8a6,100:000000&height=120&section=footer"/> </p> ```
+
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:14b8a6,100:000000&height=120&section=footer" alt="Footer" />
+</p>
