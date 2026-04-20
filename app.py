@@ -115,13 +115,13 @@ We dream of a future where every woman knows: “Even if I’m walking alone… 
 
 """)
 
-# ------------------- SESSION STATE -------------------
+
 if "vectorstore" not in st.session_state:
     st.session_state.vectorstore = None
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# ------------------- VECTORSTORE INIT -------------------
+
 if st.session_state.vectorstore is None:
     embeddings = get_embeddings()
     vectorstore = load_faiss(embeddings)
@@ -146,7 +146,7 @@ for msg in st.session_state.messages:
     else:
         st.markdown(f"<div class='chat-bubble-bot'>🤖 {content}</div>", unsafe_allow_html=True)
 
-# ------------------- CHAT INPUT -------------------
+
 query = st.chat_input("Type your safety question here...")
 if query:
     st.session_state.messages.append({"role": "user", "content": query})
