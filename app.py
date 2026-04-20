@@ -21,7 +21,7 @@ CHUNK_OVERLAP = 150
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("safeDost-chatbot")
 
-# ------------------- EMBEDDINGS -------------------
+
 from langchain_community.embeddings import HuggingFaceEmbeddings
 import os
 
