@@ -136,7 +136,7 @@ if st.session_state.vectorstore is None:
         st.success(f"✅ Preloaded {len(chunks)} knowledge chunks from ./data")
     st.session_state.vectorstore = vectorstore
 
-# ------------------- CHAT HISTORY -------------------
+
 st.subheader("💬 Chat with your Dost")
 for msg in st.session_state.messages:
     role = msg["role"]
@@ -154,7 +154,7 @@ if query:
     retriever = st.session_state.vectorstore.as_retriever(search_kwargs={"k": 4})
     docs = retriever.get_relevant_documents(query)
 
-    # prepare context
+    
     context_texts = []
     for i, d in enumerate(docs):
         snippet = d.page_content.strip()
